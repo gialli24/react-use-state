@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export default function AppMain({ tabsData }) {
 
-    const tabs = useState(tabsData[0]);
+    const tabs = useState(null);
     const [openTab, setTab] = tabs;
 
     return (
@@ -13,15 +13,15 @@ export default function AppMain({ tabsData }) {
                         <nav>
                             {
                                 tabsData.map(tab => (
-                                    <button key={tab.id} onClick={() => setTab(tab)} className={openTab.id === tab.id ? "btn active" : "btn primary"}>{tab.title}</button>
+                                    <button key={tab.id} onClick={() => setTab(tab)} className={openTab && openTab.id === tab.id ? "btn active" : "btn primary"}>{tab.title}</button>
                                 ))
                             }
                         </nav>
 
                         <div className="tab-content">
-                            <h1>{openTab.title}</h1>
+                            <h1>{openTab && openTab.title || ""}</h1>
                             <p>
-                                {openTab.description}
+                                {openTab && openTab.description || "Nessun linguaggio selezionato"}
                             </p>
                         </div>
                     </div>
