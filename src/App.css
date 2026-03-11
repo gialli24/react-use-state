@@ -11,6 +11,15 @@ img {
   max-width: 100%;
 }
 
+/* Variables */
+:root {
+  --color-white: rgb(255, 255, 255);
+  --color-dark: rgb(36, 36, 36);
+  --color-primary: rgb(13, 110, 253);
+  --color-tetiary: rgb(243, 243, 243);
+  --color-active: rgb(255, 193, 7);
+}
+
 /* Utilities */
 .container {
   max-width: 1000px;
@@ -18,9 +27,57 @@ img {
   margin: 0 auto;
 }
 
+.btn {
+  padding: 0.5rem;
+
+  border: none;
+  border-radius: 0.2rem;
+
+  font-size: 1rem;
+}
+
+.btn.primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn.active {
+  background-color: var(--color-active);
+  color: var(--color-dark);
+}
+
 /* Header Region */
 header {
   padding: 1rem;
 
-  background-color: #f3f3f3;
+  background-color: var(--color-tetiary);
 }
+
+/* Header EndRegion */
+
+/* Main Region */
+main {
+  padding: 2rem 1rem;
+}
+
+/* Main EndRegion */
+
+
+/* Tabs EndRegion */
+.tabs nav {
+  margin-bottom: 1rem;
+}
+
+.tabs nav>button {
+  margin: 0 1rem 0 0;
+}
+
+.tabs .tab-content {
+  padding: 2em;
+
+  border-radius: 1rem;
+
+  background-color: var(--color-tetiary);
+}
+
+/* Tabs Region */
