@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "./Button";
+import TabCard from "./TabCard";
 
 export default function AppMain({ languages }) {
 
@@ -17,8 +18,7 @@ export default function AppMain({ languages }) {
                                 ))
                             }
                         </nav>
-
-
+                        {selected ? <TabCard title={selected.title} description={selected.description} /> : "Nessun linguaggio selezionato"}
                     </div>
                 </section>
             </main >
