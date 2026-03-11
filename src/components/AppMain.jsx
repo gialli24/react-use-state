@@ -1,20 +1,28 @@
-export default function AppMain() {
+import { useState } from "react"
+
+export default function AppMain({ tabsData }) {
+
+    const tabs = useState(tabsData[0]);
+    const [openTab, setTab] = tabs;
+
     return (
         <>
             <main>
                 <section className="tabs">
                     <div className="container">
                         <nav>
-                            <button className="btn active">HTML</button>
-                            <button className="btn primary">CSS</button>
-                            <button className="btn primary">JavaScript</button>
-                            <button className="btn primary">Node.js</button>
-                            <button className="btn primary">Express</button>
-                            <button className="btn primary">ReactJS</button>
+                            {
+                                tabsData.map(tab => (
+                                    <button key={tab.id} onClick={() => setTab(tab)} className={openTab.id === tab.id ? "btn active" : "btn primary"}>{tab.title}</button>
+                                ))
+                            }
                         </nav>
 
                         <div className="tab-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, explicabo possimus. Rem laudantium minus optio facere omnis ea, cum iusto impedit fugiat placeat dolor quaerat nobis a, velit sequi soluta?
+                            <h1>{openTab.title}</h1>
+                            <p>
+                                {openTab.description}
+                            </p>
                         </div>
                     </div>
                 </section>
