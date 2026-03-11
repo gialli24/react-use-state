@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <AppHeader />
-      <AppMain tabsData={languages} />
+      <AppMain languages={languages} />
     </>
   )
 }

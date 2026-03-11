@@ -1,9 +1,9 @@
 import { useState } from "react"
+import Button from "./Button";
 
-export default function AppMain({ tabsData }) {
+export default function AppMain({ languages }) {
 
-    const tabs = useState(null);
-    const [openTab, setTab] = tabs;
+    const [selected, setSelected] = useState(null);
 
     return (
         <>
@@ -12,21 +12,16 @@ export default function AppMain({ tabsData }) {
                     <div className="container">
                         <nav>
                             {
-                                tabsData.map(tab => (
-                                    <button key={tab.id} onClick={() => setTab(tab)} className={openTab && openTab.id === tab.id ? "btn active" : "btn primary"}>{tab.title}</button>
+                                languages.map(lang => (
+                                    <Button key={lang.id} lang={lang} selected={selected} handleOnClick={setSelected} />
                                 ))
                             }
                         </nav>
 
-                        <div className="tab-content">
-                            <h1>{openTab && openTab.title || ""}</h1>
-                            <p>
-                                {openTab && openTab.description || "Nessun linguaggio selezionato"}
-                            </p>
-                        </div>
+
                     </div>
                 </section>
-            </main>
+            </main >
         </>
     )
 }

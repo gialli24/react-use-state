@@ -27,7 +27,7 @@ img {
   margin: 0 auto;
 }
 
-.btn {
+button {
   padding: 0.5rem;
 
   border: none;
@@ -38,12 +38,12 @@ img {
   cursor: pointer;
 }
 
-.btn.primary {
+button.primary {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
 
-.btn.active {
+button.active {
   background-color: var(--color-active);
   color: var(--color-dark);
 }
